@@ -471,6 +471,7 @@ class MainGUI:
     def __init__(self):
         self.root = Tk()
         self.root.config(bg="black")
+        self.root.geometry("350x150")
         self.root.tk.call('wm', 'iconphoto', self.root._w, PhotoImage(file="icons8-octahedron-64.png"))
         self.root.title("NamGEN")
         self.name_value = ""
@@ -485,7 +486,7 @@ class MainGUI:
         self.generator_button = Button(self.root, text="Generate!", bg='black', fg='white',
                                        command=self.generate_name)
         self.name_label = Label(self.root, text="", padx=50, pady=10, bg='black', fg='red')
-        self.title_label.grid(row=0)
+        self.title_label.grid(row=0, padx=75)
         self.name_label.grid(row=1)
         self.generator_button.grid(row=2)
         self.root.mainloop()
